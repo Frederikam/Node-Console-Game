@@ -25,6 +25,7 @@ module.exports = {
 		*/
 
 		input = input.trim();
+		input = input.toLowerCase();
 
 		if(input.startsWith("go") || input.startsWith("move")){
 			try{
