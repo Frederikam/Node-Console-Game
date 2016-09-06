@@ -5,7 +5,7 @@ module.exports = {
 
 	startup: function(){
 		map.startup();
-		this.changeRoom(map.rooms["-1:-1"]);
+		this.changeRoom(map.rooms["0:0"]);
 	},
 
 	changeRoom: function(newRoom){
