@@ -1,5 +1,5 @@
-var game = require("./game.js");
-var map = require("./map.js");
+var game = require("../game.js");
+var map = require("../map.js");
 
 module.exports = function(x, y, desc){
 	this.x = x;
