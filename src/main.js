@@ -5,8 +5,16 @@ const con = readline.createInterface({
   output: process.stdout
 });
 
-con.question('Hello? ', (answer) => {
-	console.log(answer);
-});
+var onInput = function(input) {
+	console.log("You said: " + input);
 
-con.close();
+	getInput(input);
+}
+
+var getInput = function(question){
+	con.question(question + " ", (answer) => {
+		onInput(answer);
+	});
+}
+
+getInput("Hello, human");
