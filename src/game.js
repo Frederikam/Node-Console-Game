@@ -30,26 +30,6 @@ module.exports = {
 		if(input.startsWith("go") || input.startsWith("move")){
 			try{
 				var direction = /\w+\s+(\w+)/.exec(input)[1];//eg "west", "north", etc
-				switch {
-					case east:
-						
-					break;
-
-					case south:
-
-					break;
-
-					case west:
-
-					break;
-
-					case north:
-
-					break
-
-					default:
-					console.log("Wat")
-					break
 				}
 			} catch (err) {
 				console.log("Pardon me?");
