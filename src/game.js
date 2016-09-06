@@ -30,9 +30,8 @@ module.exports = {
 		if(input.startsWith("go") || input.startsWith("move")){
 			try{
 				var direction = /\w+\s+(\w+)/.exec(input)[1];//eg "west", "north", etc
-				}
 			} catch (err) {
-				console.log("Pardon me?");
+				this.expressConfusion();
 			}
 		}else if(input == "enter"){
 			var newRoom = curRoom.enter();
@@ -53,6 +52,19 @@ module.exports = {
 		}
 
 		return "Action>";
+	},
+
+	expressConfusion: function(){
+		var strings = [
+			"Pardon me?",
+			"You need to speak louder.",
+			"I don't understand that.",
+			"You're not making any sense",
+			"What?",
+			"I'm sorry?",
+			"Excuse me?"
+		]
+		console.log(strings[Math.floor(Math.random() * strings.length)]);
 	}
 
 }
