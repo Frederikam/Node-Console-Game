@@ -1,3 +1,5 @@
+var game = require("./game.js");
+
 const readline = require('readline');
 
 const con = readline.createInterface({
@@ -6,9 +8,11 @@ const con = readline.createInterface({
 });
 
 var onInput = function(input) {
-	console.log("You said: " + input);
+	//console.log("You said: " + input);
 
-	getInput(input);
+	var out = game.tick(input);
+
+	getInput(out);
 }
 
 var getInput = function(question){
