@@ -35,9 +35,19 @@ module.exports = {
 				console.log("Pardon me?");
 			}
 		}else if(input == "enter"){
-			
-		}else if(input == "leave"){
-			
+			var newRoom = curRoom.enter();
+			if(newRoom == null){
+				console.log("There is nothing to enter here.")
+			} else {
+				changeRoom(newRoom);
+			}
+		}else if(input == "exit"){
+			var newRoom = curRoom.exit();
+			if(newRoom == null){
+				console.log("There is nothing to exit here.")
+			} else {
+				changeRoom(newRoom);
+			}
 		}else if(input == "examine"){
 			console.log(curRoom.getDescription());
 		}
