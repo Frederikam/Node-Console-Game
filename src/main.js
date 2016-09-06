@@ -7,6 +7,8 @@ const con = readline.createInterface({
   output: process.stdout
 });
 
+game.startup();
+
 var onInput = function(input) {
 	//console.log("You said: " + input);
 

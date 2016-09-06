@@ -8,7 +8,15 @@ module.exports = function(x, y, desc){
 	};
 
 	this.getDescription = function(){
+		return this.desc;
+	};
 
+	this.enter = function(){
+		return null;
+	};
+
+	this.exit = function(){
+		return null;
 	};
 
 }
