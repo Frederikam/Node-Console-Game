@@ -49,6 +49,8 @@ module.exports = {
 			}
 		}else if(input == "examine"){
 			console.log(curRoom.getDescription());
+		}else{
+			this.expressConfusion();
 		}
 
 		return "Action>";
@@ -62,7 +64,9 @@ module.exports = {
 			"You're not making any sense",
 			"What?",
 			"I'm sorry?",
-			"Excuse me?"
+			"Excuse me?",
+			"Please speak clearly.",
+			"Huh?"
 		]
 		console.log(strings[Math.floor(Math.random() * strings.length)]);
 	}
