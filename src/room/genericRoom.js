@@ -1,11 +1,21 @@
+var map = require("./map.js");
+
 module.exports = function(x, y, desc){
 	this.x = x;
 	this.y = y;
 	this.desc = desc;
 
-	this.canMove =  function(direction){
+	this.getNearbyRoom = function(direction){
+		var newX = this.x;
+		var newY = this.y;
 
-	};
+		switch(direction){
+			
+		}
+
+		var newRoom = map.rooms[this.x+":"+this.y];
+		return newRoom;
+	}
 
 	this.getDescription = function(){
 		return this.desc;
