@@ -1,3 +1,4 @@
+var game = require("./game.js");
 var map = require("./map.js");
 
 module.exports = function(x, y, desc){
@@ -22,12 +23,12 @@ module.exports = function(x, y, desc){
 			case "west":
 				newX--;
 				break;
-			case default:
-				console.log("Ugyldig retning")
+			default:
+				game.expressConfusion();
 				break;
 		}
 
-		var newRoom = map.rooms[this.x+":"+this.y];
+		var newRoom = map.rooms[this.newX+":"+this.newY];
 		return newRoom;
 	}
 
