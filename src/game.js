@@ -33,11 +33,11 @@ module.exports = {
 				console.log("Pardon me?");
 			}
 		}else if(input == "enter"){
-
+			
 		}else if(input == "leave"){
-
+			
 		}else if(input == "examine"){
-
+			console.log(curRoom.getDescription());
 		}
 
 		return "Action>";
