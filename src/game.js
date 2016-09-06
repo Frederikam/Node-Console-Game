@@ -1,4 +1,5 @@
 var map = require("./map.js");
+
 var curRoom;
 
 module.exports = {
@@ -26,7 +27,11 @@ module.exports = {
 		input = input.trim();
 
 		if(input.startsWith("go") || input.startsWith("move")){
-			console.log(input);
+			try{
+				var direction = /\w+\s+(\w+)/.exec(input)[1];//eg "west", "north", etc
+			} catch (err) {
+				console.log("Pardon me?");
+			}
 		}else if(input == "enter"){
 
 		}else if(input == "leave"){
