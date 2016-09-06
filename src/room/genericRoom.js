@@ -10,7 +10,21 @@ module.exports = function(x, y, desc){
 		var newY = this.y;
 
 		switch(direction){
-			
+			case "north":
+				newY--;
+				break;
+			case "east":
+				newX++;
+				break;
+			case "south":
+				newY++;
+				break;
+			case "west":
+				newX--;
+				break;
+			case default:
+				console.log("Ugyldig retning")
+				break;
 		}
 
 		var newRoom = map.rooms[this.x+":"+this.y];
