@@ -5,7 +5,6 @@ var curRoom;
 module.exports = {
 
 	startup: function(){
-		map.startup();
 		this.changeRoom(map.rooms["0:0"]);
 	},
 

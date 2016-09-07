@@ -1,5 +1,6 @@
 var game = require("../game.js");
 var map = require("../map.js");
+var main = require("../main.js");
 
 module.exports = function(x, y, desc){
 	this.x = x;
