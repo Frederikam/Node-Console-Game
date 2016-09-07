@@ -11,16 +11,16 @@ module.exports = function(x, y, desc){
 		var newY = this.y;
 
 		switch(direction){
-			case "north":
+			case 0:
 				newY--;
 				break;
-			case "east":
+			case 1:
 				newX++;
 				break;
-			case "south":
+			case 2:
 				newY++;
 				break;
-			case "west":
+			case 3:
 				newX--;
 				break;
 			default:
@@ -28,7 +28,7 @@ module.exports = function(x, y, desc){
 				break;
 		}
 
-		var newRoom = map.rooms[this.newX+":"+this.newY];
+		var newRoom = map.rooms[newX+":"+newY];
 		return newRoom;
 	}
 

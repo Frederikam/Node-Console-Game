@@ -16,4 +16,4 @@ module.exports = {
 		this.rooms["1:1"] = new GenericRoom(1, 1, "You find yourself at a beach.");
 	}
 
-}
+};

@@ -30,6 +30,27 @@ module.exports = {
 		if(input.startsWith("go") || input.startsWith("move")){
 			try{
 				var direction = /\w+\s+(\w+)/.exec(input)[1];//eg "west", "north", etc
+				switch(direction){
+					case "n":
+					case "north":
+						this.goDirection(0);
+						break;
+					case "e":
+					case "east":
+						this.goDirection(1);
+						break;
+					case "s":
+					case "south":
+						this.goDirection(2);
+						break;
+					case "w":
+					case "west":
+						this.goDirection(3);
+						break;
+					default:
+						this.expressConfusion();
+						break;
+				}
 			} catch (err) {
 				this.expressConfusion();
 			}
@@ -50,7 +71,28 @@ module.exports = {
 		}else if(input == "examine"){
 			console.log(curRoom.getDescription());
 		}else{
-			this.expressConfusion();
+			//These are move shortcuts. You could say "e" to go east for example. 
+			switch(input){
+				case "n":
+				case "north":
+					this.goDirection(0);
+					break;
+				case "e":
+				case "east":
+					this.goDirection(1);
+					break;
+				case "s":
+				case "south":
+					this.goDirection(2);
+					break;
+				case "w":
+				case "west":
+					this.goDirection(3);
+					break;
+				default:
+					this.expressConfusion();
+					break;
+			}
 		}
 
 		return "Action>";
@@ -69,6 +111,16 @@ module.exports = {
 			"Huh?"
 		]
 		console.log(strings[Math.floor(Math.random() * strings.length)]);
+	},
+
+	//Called when we invoke "go north", for example
+	goDirection: function(direction){
+		var newRoom = curRoom.getNearbyRoom(direction);
+		if(newRoom){
+			this.changeRoom(newRoom);
+		} else {
+			console.log("You can't go that way.");
+		}
 	}
 
-}
+};
