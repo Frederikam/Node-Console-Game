@@ -23,4 +23,4 @@ var getInput = function(question){
 	});
 }
 
-getInput("Action> ");
+getInput("Action>");
