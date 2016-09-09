@@ -1,6 +1,7 @@
 var map = require("./map.js");
 
 var curRoom;
+var inventory = [];
 
 module.exports = {
 
@@ -51,7 +52,16 @@ module.exports = {
 						break;
 				}
 			} catch (err) {
-				this.expressConfusion();
+				console.log("Go where?")
+			}
+		}else if(input.startsWith("get")){
+			var matches = /\w+\s+(\w+)/.exec(input);
+
+			if(matches){
+				var arg = matches[1];
+				this.getItem(arg);
+			} else {
+				console.log("Get what?");
 			}
 		}else if(input == "enter"){
 			var newRoom = curRoom.enter();
@@ -120,6 +130,19 @@ module.exports = {
 		} else {
 			console.log("You can't go that way.");
 		}
+	},
+
+	getItem: function(arg){
+		var func = curRoom.getItem;
+		if(func){
+			var item = func(arg);
+			if(item){
+				inventory[inventory.length] = item;
+				console.log("You found '" + item + "'!");
+				return;
+			}
+		}
+		console.log("Couldn't find '" + arg + "' here.");
 	}
 
 };
