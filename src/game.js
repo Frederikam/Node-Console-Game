@@ -58,14 +58,14 @@ module.exports = {
 			if(newRoom == null){
 				console.log("There is nothing to enter here.")
 			} else {
-				changeRoom(newRoom);
+				this.changeRoom(newRoom);
 			}
 		}else if(input == "exit"){
 			var newRoom = curRoom.exit();
 			if(newRoom == null){
 				console.log("There is nothing to exit here.")
 			} else {
-				changeRoom(newRoom);
+				this.changeRoom(newRoom);
 			}
 		}else if(input == "examine"){
 			console.log(curRoom.getDescription());
