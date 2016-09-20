@@ -2,6 +2,7 @@ var GenericRoom = require("./room/genericRoom.js");
 var RoomWithHut = require("./room/roomWithHut.js");
 var RoomLever = require("./room/roomLever.js");
 var RoomHut = require("./room/roomHut.js");
+var RoomTreasure = require("./room/roomTreasure.js");
 
 var leversPulled = 0;
 
@@ -32,6 +33,7 @@ module.exports.onLeverPull = function(){
 	} else if(leversPulled === 3){
 		console.log("You pull the leaver and hear some very noisy grinding from beneath!");
 		rooms["0:-1"] = new GenericRoom(0, -1, rooms["0:-1"].getDescription() + "\nAn opening in the rock wall has appeared.");
+		rooms["0:-2"] = new RoomTreasure(0, -2, "You enter a cave and hidden inside you see an old chest! It appears to be locked.");
 	}
 
 };
