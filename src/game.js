@@ -6,6 +6,13 @@ var inventory = [];
 module.exports = {
 
 	startup: function(){
+		var intro = "Welcome to adventure!!"
+		 + "\n\nSomewhere nearby is said to be where others have found"
+		 + "\nfortunes in treasure and gold, though it appears that you"
+		 + "\nare both blind and deaf. I will be your eyes and ears."
+		 + "\nDirect me with commands of 1 or 2 words."
+		 + "\n\nType HELP for more info.";
+		 console.log(intro);
 		this.changeRoom(map.rooms["0:0"]);
 	},
 
@@ -79,6 +86,12 @@ module.exports = {
 			}
 		}else if(input == "examine"){
 			console.log(curRoom.getDescription());
+		}else if(input == "help"){
+			console.log("GO\tMOVE");
+			console.log("ENTER\tEXIT");
+			console.log("HELP\tGET");
+			console.log("N\tE");
+			console.log("S\tW");
 		}else{
 			//These are move shortcuts. You could say "e" to go east for example. 
 			switch(input){
