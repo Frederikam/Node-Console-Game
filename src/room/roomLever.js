@@ -58,6 +58,6 @@ module.exports = function(x, y, desc){
 			map.onLeverPull();
 			return true;
 		}
-	}
+	};
 
 }

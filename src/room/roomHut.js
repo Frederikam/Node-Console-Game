@@ -11,7 +11,11 @@ module.exports = function(desc){
 	};
 
 	this.getDescription = function(){
-		return this.desc;
+		if(this.keyTaken){
+			return this.desc + "\nThere used to be a key here, but you took it.";
+		} else {
+			return this.desc + "\nThere's a key in one of the cupboards.";
+		}
 	};
 
 	this.enter = function(){
@@ -23,8 +27,9 @@ module.exports = function(desc){
 	};
 
 	this.getItem = function(arg){
-		if(!this.keyTaken && arg == "key"){
-			this.keyTaken = true;
+		var hut = map.rooms["hut"];
+		if(!hut.keyTaken && arg == "key"){
+			hut.keyTaken = true;
 			return "Golden Key"
 		}
 	};
