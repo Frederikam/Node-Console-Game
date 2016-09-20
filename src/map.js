@@ -21,4 +21,9 @@ module.exports.rooms = rooms;
 
 module.exports.onLeverPull = function(){
 	console.log("You hear a rumbling sound as you pull the lever");
+	leversPulled++;
+
+	if(leversPulled === 1){
+		rooms["-1:-1"] = new RoomLever(-1, -1, rooms["-1:-1"].getDescription() + "\nA lever has been revealed from the ground!");
+	}
 };
