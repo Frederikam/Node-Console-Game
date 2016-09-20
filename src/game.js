@@ -71,6 +71,16 @@ module.exports = {
 			} else {
 				console.log("Get what?");
 			}
+		}else if(input.startsWith("pull")){
+			if(curRoom.pull != null){
+				if(curRoom.pull()){
+
+				} else {
+					console.log("You already pulled that!");
+				}
+			} else {
+				console.log("There doesn't appear to be anything to pull here!");
+			}
 		}else if(input == "enter"){
 			var newRoom = curRoom.enter();
 			if(newRoom == null){
@@ -90,7 +100,8 @@ module.exports = {
 		}else if(input == "help"){
 			console.log("GO\tMOVE");
 			console.log("ENTER\tEXIT");
-			console.log("HELP\tGET");
+			console.log("HELP\tEXAMINE");
+			console.log("GET\tPULL");
 			console.log("N\tE");
 			console.log("S\tW");
 		}else{
