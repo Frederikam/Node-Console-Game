@@ -13,6 +13,7 @@ var onInput = function(input) {
 	//console.log("You said: " + input);
 
 	var out = game.tick(input);
+	console.log("\n");
 
 	getInput(out);
 }
