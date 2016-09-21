@@ -97,13 +97,22 @@ module.exports = {
 			}
 		}else if(input == "examine"){
 			console.log(curRoom.getDescription());
+		}else if(input == "unlock"){
+			if(curRoom.unlock){
+				if(!curRoom.unlock(inventory)){
+					console.log("Can't unlock that with what we currently have.")
+				}
+			} else {
+				console.log("There's nothing to unlock here.")
+			}
 		}else if(input == "help"){
 			console.log("GO\tMOVE");
 			console.log("ENTER\tEXIT");
-			console.log("HELP\tEXAMINE");
+			console.log("UNLOCK\tEXAMINE");
 			console.log("GET\tPULL");
 			console.log("N\tE");
 			console.log("S\tW");
+			console.log("HELP");
 		}else{
 			//These are move shortcuts. You could say "e" to go east for example. 
 			switch(input){

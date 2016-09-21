@@ -45,8 +45,15 @@ module.exports = function(x, y, desc){
 		return null;
 	};
 
-	this.unlock = function(){
-		
+	this.unlock = function(inv){
+		for (var i in inv){
+			var item = inv[i];
+			if(item == "Golden Key"){
+				main.completeGame();
+			}
+		}
+
+		return false;
 	}
 
 }

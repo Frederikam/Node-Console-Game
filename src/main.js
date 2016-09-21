@@ -24,4 +24,9 @@ var getInput = function(question){
 	});
 }
 
+module.exports.completeGame = function(){
+	console.log("Congratulations, you win!");
+	process.exit();
+}
+
 getInput("Action>");
