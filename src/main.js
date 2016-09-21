@@ -7,7 +7,7 @@ const con = readline.createInterface({
   output: process.stdout
 });
 
-game.startup();
+var gameEnded = false;
 
 var onInput = function(input) {
 	//console.log("You said: " + input);
@@ -15,7 +15,9 @@ var onInput = function(input) {
 	var out = game.tick(input);
 	console.log(" ");
 
-	getInput(out);
+	if(!gameEnded){
+		getInput(out);
+	}
 }
 
 var getInput = function(question){
@@ -26,7 +28,8 @@ var getInput = function(question){
 
 module.exports.completeGame = function(){
 	console.log("Congratulations, you win!");
-	process.exit();
+	gameEnded = true;
 }
 
+game.startup();
 getInput("Action>");
