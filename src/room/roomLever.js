@@ -38,7 +38,7 @@ module.exports = function(x, y, desc){
 		if(this.isPulled){
 			return this.desc + "\nIt has already been pulled.";
 		} else {
-			return this.desc;
+			return this.desc + "\nDo you pull it?.";
 		}
 	};
 
