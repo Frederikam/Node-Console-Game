@@ -10,10 +10,10 @@ module.exports = {
 		 + "\n\nSomewhere nearby a cave is located."
 		 + "\nIt is said to be hiding massive fortunes"
 		 + "\nin treasure and gold sought after by many."
-		 + "\nThough as it appears that you are both blind and deaf,"
+		 + "\nThough it appears that you are both blind and deaf,"
 		 + "\nI will be your eyes and ears for this journey."
-		 + "\nDirect me with commands of 1 or 2 words, "
-		 + "\nand i shall guide you to glory and riches."
+		 + "\nDirect me with commands of 1 or 2 words "
+		 + "\nand I shall guide you to glory and riches!"
 		 + "\n\nType HELP for more info.";
 		console.log(intro);
 		this.changeRoom(map.rooms["0:0"]);
